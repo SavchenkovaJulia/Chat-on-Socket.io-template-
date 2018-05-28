@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <base href="/">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/my.js"></script>
+</head>
+<body>
+
+
+<form class="loginForm" ng-controller="LoginCtrl">
+  <div class="username">
+    <input type="text" placeholder="Username" ng-model="login"/>
+  </div>
+  <div class="password">
+    <input type="password" placeholder="Password" ng-model="password"/>
+  </div>
+  <button ng-click="SignIn()">Sign In</button>
+ <span class="result">{{result}}</span>
+  <span class="bottom-links"><a href="#">Sign up</a> - <a href="#">Forgot Password?</a></span>
+   
+</form>
+
+
+<!-- Chat-->
+  <div class="chat" ng-controller="MyCtrl as chat">
+  <div class="chat-header">
+    <h2>Chat</h2>
+    <input ng-model="chat.newName" type="text" placeholder="Enter your name">
+    <input ng-click="chat.setName()" type="button" value="Go!">
+  </div>
+  <div class="chat-history">
+    <ul>
+      <li class="chat-item chat-item--user1">
+        <img src="img/man.png" alt="">
+        <div class="message">
+          <span class="message__user-name">Bill</span>
+          <time class="message__time">
+            14:10
+          </time>
+          <p class="message__text">Hello!</p>
+        </div>
+      </li>
+      
+       <li ng-repeat = "message in chat.messages" class="chat-item chat-item--other">
+        <div class="message">
+          <span class="message__user-name">{{message.author}}</span>
+          <time class="message__time">
+            {{message.time.getHours()}}:{{message.time.getMinutes()}}
+          </time>
+          <p class="message__text">{{message.text}}</p>
+        </div>
+        <img src="img/anonimus2.png" alt="" />
+        </li>
+       <div id="Bottom"></div>
+    </ul>
+  </div>
+  <div class="chat-controls">
+   <form ng-submit = "chat.sendMessage()">
+    <textarea ng-model = "chat.newMessage" class="chat-controls__textarea" rows="2" placeholder="Type your message"></textarea>
+      <input ng-click="gotoBottom()" type="submit" class="chat-controls__btn" value="Send">
+    </form>
+  </div>
+</div>
+    
+</body>
+</html>

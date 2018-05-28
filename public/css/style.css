@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+*:focus {
+	outline: none;
+}
+
+/*Login*/
+
+
+.loginForm a {
+	text-decoration: none;
+}
+
+
+
+.loginForm span {
+	display: block;
+}
+
+
+.loginForm input,
+button,
+div {
+	width: 100%;
+	border: 0;
+}
+
+.loginForm {
+	width: 300px;
+	margin-top: 1%;
+	margin-left: auto;
+}
+
+.loginForm div input {
+	background-color: #fff;
+	height: 50px;
+	padding: 15px;
+	border: 2px solid grey;
+	border-bottom: 0;
+	font-size: 15px;
+	color: #666;
+	border-radius: 3px;
+}
+
+.loginForm button {
+	cursor: pointer;
+	background-color: #593C8A;
+	height: 50px;
+	font-size: 18px;
+	color: #fff;
+	border-radius: 0 0 5px 5px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.loginForm button:hover {
+	opacity: 0.8;
+	
+}
+
+.result{
+	text-align: center;
+	color: red;
+	font-size: 20px;
+	padding-top: 5px;
+}
+
+
+.loginForm .bottom-links {
+	margin-top: 15px;
+	font-size: 15px;
+	text-align: center;
+	line-height: 15px;
+}
+
+.loginForm .bottom-links a {
+	color: #666;
+}
+
+.loginForm .bottom-links a:hover {
+	color: #593C8A;
+}
+
+
+/*Chat*/
+
+
+.chat {
+	margin-left: auto;
+	margin-right: auto;
+
+	width: 450px;
+	background: #E4DBF3;
+	border-radius: 5px;
+	-webkit-box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.chat-header {
+	background: #593C8A;
+	padding: 1px 10px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.chat-header h2 {
+	color: #fff;
+}
+
+.chat-header input {
+	padding: 5px;
+	border: none;
+	border-radius: 2px;
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+
+.chat-header input[type=text]:focus {
+	outline: none;
+}
+
+.chat-header input[type=text]:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+.chat-header input[type=button] {
+	background-color: white;
+	color: #593C8A;
+	margin-left: 5px;
+
+}
+
+.chat-history {
+	height: 350px;
+	overflow-y: auto;
+	padding: 10px;
+}
+
+.chat-item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	margin-bottom: 15px;
+}
+
+.chat-item--other {
+	 justify-content: flex-end;
+
+}
+
+.chat-item img {
+	width: 50px;
+	border-radius: 50%;
+}
+
+.chat-item--other img {
+	border: 1px solid green;
+}
+
+
+.chat-item--user1 .message {
+	background: #f6f6f6;
+	margin-left: 10px;
+}
+
+.chat-item--user1 .message::before {
+	right: 100%;
+	border: solid transparent;
+	border-right-color: #f6f6f6;
+	content: '';
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-width: 10px;
+	top: 10px;
+}
+
+.chat-item--other .message {
+	background: #B7F9B3;
+	margin-right: 15px;
+}
+
+.chat-item--other .message::after {
+	left: 100%;
+	border: solid transparent;
+	border-left-color: #B7F9B3;
+	content: '';
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-width: 10px;
+	top: 10px;
+}
+
+.message {
+	padding: 10px;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+}
+
+.message__user-name {
+	font-size: 18px;
+	color: #000;
+}
+
+.message__time {
+	font-size: 15px;
+	color: #999;
+}
+
+.message__text {
+	font-size: 14px;
+	color: #777777;
+	 word-wrap: break-word;
+}
+
+.btns-row {
+	margin-top: 5px;
+}
+
+.chat-controls {
+	margin-top: 10px;
+	border-top: 1px solid #f6f6f6;
+	padding: 20px;
+	padding-top: 10px;
+}
+
+.chat-controls__textarea {
+	width: 100%;
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	resize: none;
+	outline: none;
+	font-size: 15px;
+}
+
+.chat-controls__textarea:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+.chat-controls__btn {
+	padding: 10px 15px;
+	background: #593C8A;
+	font-size: 15px;
+	display: inline-block;
+	margin-left: 80%;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 3px;
+	border: none;
+}
+
+
+::-webkit-scrollbar {
+	width: 15px;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+}
+
