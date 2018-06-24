@@ -45,12 +45,6 @@ var chatMessages = this.messages;
     })
     
     
-    
-//     $scope.gotoBottom = function() {
-//      $("#Bottom").scrollIntoView();
-//    };
-//    
-    
 });
 
 // Login controller
@@ -69,5 +63,5 @@ app.controller("LoginCtrl", function($scope){
 		console.log(data);
 		$scope.$digest();
 	})
-	});
+});
 	

@@ -7,10 +7,8 @@ var io = require("socket.io")(server);
 
 const port = 8000;
 
-//Клієнстька частина сайту знаходиться у папці public
 app.use(express.static(__dirname + "/public"));
 
-//Стандарти кодування
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	'extended': 'true'
@@ -28,7 +26,6 @@ var users = [{
 io.sockets.on("connection", function (socket) {
 	console.log('user connected');
 
-	//Chat's functions
 	connections.push(socket);
 
 	socket.on("sendMessage", function (data) {
@@ -39,7 +36,7 @@ io.sockets.on("connection", function (socket) {
 
 	})
 
-	// Login form functions 
+
 	socket.on("sendSignIn", function (data) {
 
 		for (let i = 0; i < users.length; i++) {
@@ -60,8 +57,6 @@ io.sockets.on("connection", function (socket) {
 });
 
 
-
-// Усі адреси контро
 app.get("*", function (req, res) {
 	res.sendFile(__dirname + "/public/index.html");
 });
